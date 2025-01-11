@@ -17,7 +17,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BaseTest {
 
     protected static WebDriver driver;
+
     protected static String baseUrl;
+
+    protected static JavascriptExecutor js;
+
     @BeforeAll
     public static void setUp() {
 
@@ -39,6 +43,7 @@ public class BaseTest {
         // options.addArguments("--headless");
         driver = new ChromeDriver(options);
         baseUrl = "https://giga.ba/";
+        js = (JavascriptExecutor) driver;
     }
 
     @AfterAll
