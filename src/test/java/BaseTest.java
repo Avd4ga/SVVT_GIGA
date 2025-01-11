@@ -1,18 +1,11 @@
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class BaseTest {
 
@@ -21,6 +14,8 @@ public class BaseTest {
     protected static String baseUrl;
 
     protected static JavascriptExecutor js;
+
+    protected static WebDriverWait driverWait;
 
     @BeforeAll
     public static void setUp() {
@@ -32,6 +27,7 @@ public class BaseTest {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--window-size=1024,768");
         options.addArguments("--incognito");
+        options.addArguments("--incognito");
 
         // Additional options to avoid detection
         options.addArguments("--disable-extensions");
@@ -42,6 +38,7 @@ public class BaseTest {
 
         // options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         baseUrl = "https://giga.ba/";
         js = (JavascriptExecutor) driver;
     }
