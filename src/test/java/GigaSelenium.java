@@ -9,13 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GigaSelenium {
@@ -24,8 +20,7 @@ public class GigaSelenium {
     private static String baseUrl;
     @BeforeAll
     public static void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Avdo1\\OneDrive\\Desktop\\Avdo\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-
+        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
 
         options.addArguments("--disable-blink-features=AutomationControlled");
@@ -87,7 +82,7 @@ public class GigaSelenium {
     @Test
     public void registrationFail() throws InterruptedException {
         driver.get("https://giga.ba/");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         Thread.sleep(2000);
         driver.findElement(By.cssSelector(".header__icon--account > .icon")).click();
         driver.findElement(By.cssSelector(".header__account__register > span")).click();
@@ -101,7 +96,8 @@ public class GigaSelenium {
         driver.findElement(By.id("RegisterForm-password")).sendKeys("Metak2003");
         driver.findElement(By.cssSelector(".button--arrow:nth-child(1)")).click();
         Thread.sleep(3000);
-        assertThat(driver.findElement(By.id("RegisterForm-email-error")).getText(), is("Ova e-adresa već je povezana s računom."));
+        //assertThat(driver.findElement(By.id("RegisterForm-email-error")).getText(), is("Ova e-adresa već je povezana s računom."));
+        assertEquals(driver.findElement(By.id("RegisterForm-email-error")).getText(), "Ova e-adresa već je povezana s računom.");   
     }
 
     @Test
