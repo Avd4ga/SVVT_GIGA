@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,7 +26,7 @@ public class RegisterTest extends BaseTest {
 
         String accountName = firstName + " " + lastName;
 
-        driver.findElement(By.id("RegisterForm-email")).sendKeys("example@gmail.com");
+        driver.findElement(By.id("RegisterForm-email")).sendKeys("example" + Keys.chord(Keys.SHIFT, "2") + "gmail.com");
 
         driver.findElement(By.id("RegisterForm-password")).sendKeys("SecurePass123");
 

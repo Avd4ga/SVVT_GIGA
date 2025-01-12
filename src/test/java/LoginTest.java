@@ -20,9 +20,7 @@ public class LoginTest extends BaseTest{
         driver.findElement(By.linkText("Prijava")).click();
         Thread.sleep(1000);
 
-        // the undetected-driver is replacing the @ sign with driver location, so we input the email in this way
-        String[] emailParts = EMAIL.split("@");
-        driver.findElement(By.id("CustomerEmail")).sendKeys(emailParts[0] + Keys.chord(Keys.SHIFT, "2") + emailParts[1]);
+        driver.findElement(By.id("CustomerEmail")).sendKeys(EMAIL);
         Thread.sleep(1000);
 
         driver.findElement(By.id("CustomerPassword")).sendKeys(PASSWORD);
@@ -31,7 +29,7 @@ public class LoginTest extends BaseTest{
         driver.findElement(By.cssSelector(".customer__buttons:nth-child(6) > .button--primary")).click();
 
         // wait until captcha is manually solved
-        Thread.sleep(15000);
+        Thread.sleep(30000);
         assertEquals("https://giga.ba/account", driver.getCurrentUrl());
     }
 

@@ -9,12 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.Random;
 
 public class BaseTest {
 
-    protected final String EMAIL = "gefofa5405@pariag.com";
+    // the undetected-driver is replacing the @ sign with driver location, so we input the email in this way
+    protected final String EMAIL = "gefofa5405" + Keys.chord(Keys.SHIFT, "2") + "pariag.com";
 
     protected final String PASSWORD = "gefofa5405";
+
     protected final String BASE_URL = "https://giga.ba/";
 
     protected static WebDriver driver;
@@ -43,16 +46,12 @@ public class BaseTest {
 
         String driver_home = "src/main/resources/driver/chromedriver.exe";
         ChromeOptions chrome_options = new ChromeOptions();
-        chrome_options.addArguments("--window-size=1920,1080");
-
-        ChromeDriverService service = new ChromeDriverService.Builder()
-                .usingDriverExecutable(new File(driver_home))
-                .usingAnyFreePort()
-                .build();
+        chrome_options.addArguments("--window-size=1076,645");
 
         driver = new ChromeDriverBuilder()
                 .build(chrome_options,driver_home);
-
+        /*driver = new ChromeDriverBuilder()
+                .build("your driver home");*/
     }
 
     @AfterAll
