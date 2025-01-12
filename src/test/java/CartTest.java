@@ -17,7 +17,7 @@ public class CartTest extends BaseTest{
     @Test
     public void seleniumAddCartSingle() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -35,7 +35,7 @@ public class CartTest extends BaseTest{
     @Test
     public void seleniumAddCartMultiple() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
 
         driver.findElement(By.cssSelector(".collection-product-card:nth-child(4) .link")).click();
@@ -53,7 +53,7 @@ public class CartTest extends BaseTest{
     @Test
     public void seleniumAddCartOutOfStock() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
 
         // Navigate to the page

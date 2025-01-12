@@ -9,7 +9,7 @@ public class NavigationTest extends BaseTest{
     @Test
     public void navigationInternal() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
 
         Thread.sleep(1000);
@@ -19,19 +19,19 @@ public class NavigationTest extends BaseTest{
         Thread.sleep(1000);
         aboutUs.click();
 
-        assertEquals(baseUrl + "pages/o-nama", driver.getCurrentUrl());
+        assertEquals(BASE_URL + "pages/o-nama", driver.getCurrentUrl());
         Thread.sleep(1000);
 
         WebElement logo = driver.findElement(By.xpath("//*[@id=\"shopify-section-sections--16504047960240__header\"]/sticky-header/header/div[1]/div/a"));
         logo.click();
 
-        assertEquals(baseUrl, driver.getCurrentUrl());
+        assertEquals(BASE_URL, driver.getCurrentUrl());
     }
 
     @Test
     public void navigationExternal() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
 
         Thread.sleep(1000);
@@ -50,6 +50,6 @@ public class NavigationTest extends BaseTest{
 
         driver.navigate().back();
         Thread.sleep(1000);
-        assertEquals(baseUrl, driver.getCurrentUrl());
+        assertEquals(BASE_URL, driver.getCurrentUrl());
     }
 }

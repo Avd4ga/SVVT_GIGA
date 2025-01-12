@@ -11,7 +11,7 @@ public class ForgotPasswordTest extends BaseTest {
     @Test
     public void forgotPasswordValidInput() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -38,7 +38,7 @@ public class ForgotPasswordTest extends BaseTest {
     @Test
     public void forgotPasswordInvalidInput() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 

@@ -11,7 +11,7 @@ public class FiltersTest extends BaseTest{
     @Test
     public void filters() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -28,7 +28,7 @@ public class FiltersTest extends BaseTest{
     @Test
     public void filtersPrice() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
 
         String inputPrice = "68";
@@ -53,7 +53,7 @@ public class FiltersTest extends BaseTest{
     @Test
     public void filtersClearFilters() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
 
         driver.findElement(By.cssSelector(".cards-grid__item:nth-child(2) > .cards-grid__link")).click();

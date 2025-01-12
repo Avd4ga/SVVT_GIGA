@@ -8,7 +8,7 @@ public class RegisterTest extends BaseTest {
     @Test
     public void registration() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -42,7 +42,7 @@ public class RegisterTest extends BaseTest {
     @Test
     public void registrationFail() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 

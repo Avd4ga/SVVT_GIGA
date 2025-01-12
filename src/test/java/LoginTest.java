@@ -9,7 +9,7 @@ public class LoginTest extends BaseTest{
     @Test
     public void login() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -19,10 +19,10 @@ public class LoginTest extends BaseTest{
         driver.findElement(By.linkText("Prijava")).click();
         Thread.sleep(1000);
 
-        driver.findElement(By.id("CustomerEmail")).sendKeys("lanolog879@kvegg.com");
+        driver.findElement(By.id("CustomerEmail")).sendKeys(EMAIL);
         Thread.sleep(1000);
 
-        driver.findElement(By.id("CustomerPassword")).sendKeys("SecurePass123");
+        driver.findElement(By.id("CustomerPassword")).sendKeys(PASSWORD);
         Thread.sleep(1000);
 
         driver.findElement(By.cssSelector(".customer__buttons:nth-child(6) > .button--primary")).click();
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest{
     @Test
     public void loginFail() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -43,7 +43,7 @@ public class LoginTest extends BaseTest{
         driver.findElement(By.linkText("Prijava")).click();
         Thread.sleep(1000);
 
-        driver.findElement(By.id("CustomerEmail")).sendKeys("lanolog87@kvegg.com");
+        driver.findElement(By.id("CustomerEmail")).sendKeys("example@gmail.com");
         Thread.sleep(1000);
 
         driver.findElement(By.id("CustomerPassword")).sendKeys("SecurePass123");

@@ -12,7 +12,7 @@ public class SortingTest extends BaseTest {
     @Test
     public void sortByPriceAscending() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(1000);
 
@@ -46,7 +46,7 @@ public class SortingTest extends BaseTest {
     @Test
     public void sortAlphabetically() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(1000);
 

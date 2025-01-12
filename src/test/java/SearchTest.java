@@ -8,7 +8,7 @@ public class SearchTest extends BaseTest{
     @Test
     public void search() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -25,7 +25,7 @@ public class SearchTest extends BaseTest{
     @Test
     public void searchNotExist() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
@@ -40,7 +40,7 @@ public class SearchTest extends BaseTest{
     @Test
     public void searchSuggestion() throws InterruptedException {
 
-        driver.get(baseUrl);
+        driver.get(BASE_URL);
         driver.manage().window().maximize();
         Thread.sleep(2000);
 
