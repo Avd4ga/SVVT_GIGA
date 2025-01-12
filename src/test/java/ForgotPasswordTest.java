@@ -24,7 +24,7 @@ public class ForgotPasswordTest extends BaseTest {
         driver.findElement(By.linkText("Zaboravljena lozinka?")).click();
         Thread.sleep(1000);
 
-        driver.findElement(By.id("RecoverEmail")).sendKeys("lanolog879@kvegg.com");
+        driver.findElement(By.id("RecoverEmail")).sendKeys(EMAIL);
         Thread.sleep(1000);
 
         driver.findElement(By.xpath("/html/body/main/section/div/div/div/div/div[2]/div[1]/div[2]/form/div[2]/button")).click();
