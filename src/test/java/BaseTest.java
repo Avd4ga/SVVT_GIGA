@@ -41,8 +41,6 @@ public class BaseTest {
 
         // options.addArguments("--headless");
         //driver = new ChromeDriver(options);*/
-        driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        js = (JavascriptExecutor) driver;
 
         String driver_home = "src/main/resources/driver/chromedriver.exe";
         ChromeOptions chrome_options = new ChromeOptions();
@@ -50,6 +48,8 @@ public class BaseTest {
 
         driver = new ChromeDriverBuilder()
                 .build(chrome_options,driver_home);
+        driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        js = (JavascriptExecutor) driver;
         /*driver = new ChromeDriverBuilder()
                 .build("your driver home");*/
     }
