@@ -41,7 +41,7 @@ public class BaseTest {
         driverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
         js = (JavascriptExecutor) driver;
 
-        String driver_home = "src/driver/chromedriver.exe";
+        String driver_home = "src/main/resources/driver/chromedriver.exe";
         ChromeOptions chrome_options = new ChromeOptions();
         chrome_options.addArguments("--window-size=1920,1080");
 
